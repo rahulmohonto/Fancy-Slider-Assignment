@@ -71,7 +71,7 @@ img {
 } */
 
 .img-item:hover{
-  background-color: blue;
+  background-color: rgb(138, 138, 156);
   box-shadow: 4px 5px 14px royalblue;
   border-radius: 8px;
   color:rgb(252, 238, 247);
