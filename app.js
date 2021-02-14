@@ -50,13 +50,13 @@ const selectItem = (event, img) => {
   }
 
   else if (item >= -1) {
-    // sliders = sliders.filter(img => img == -1);
+
     element.classList.toggle('removed');
     console.log('deselected');
     sliders = sliders.filter(img => img == -1);
-    // sliders.pop(img);
-    // console.log('removed');
-    // console.log('sliders');
+
+    // console.log('removed');  get deseleted all items if clicked on already added image , have to again select atleast two images
+
   }
   else {
     alert('Hey, Already added !')
@@ -71,7 +71,7 @@ const createSlider = () => {
   }
 
 
-  // crate slider previous next area
+  // create slider previous next area
 
   sliderContainer.innerHTML = '';
   const prevNext = document.createElement('div');
@@ -141,7 +141,7 @@ sliderBtn.addEventListener('click', function () {
   const gettime = document.getElementById('duration').value;
   const convertTime = parseInt(gettime);
   if (convertTime <= 0) {
-    alert('time can not be negative');
+    alert("Oh! Dear time can't run backward ");
   }
   else { createSlider() };
 
@@ -187,8 +187,10 @@ getSlideSearch.addEventListener('keyup', function () {
     else { createSlider() };
   }
 })
-// onmouseover
-// onmouseover =selectItem(event, "${image.imageHeight} ${image.imageWidth} ")
+
+
+//added onmouseover effect
+// and particular image height, width for each image
 
 
 
