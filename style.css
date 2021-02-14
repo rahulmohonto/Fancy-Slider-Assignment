@@ -70,6 +70,8 @@ img {
   background-color: #1e1743;
 } */
 
+/* mouseHover effect on images*/
+
 .img-item:hover{
   background-color: rgb(138, 138, 156);
   box-shadow: 4px 5px 14px royalblue;

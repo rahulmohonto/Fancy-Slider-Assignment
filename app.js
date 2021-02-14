@@ -36,19 +36,27 @@ const getImages = (query) => {
     .then(data => showImages(data.hits))
     .catch(err => console.log(err))
 }
+
 let sliders = [];
 let slideIndex = 0;
 const selectItem = (event, img) => {
   let element = event.target;
   element.classList.add('added');
+  console.log('added');
 
   let item = sliders.indexOf(img);
   if (item === -1) {
     sliders.push(img);
   }
-  else if (item > -1) {
+
+  else if (item >= -1) {
+    // sliders = sliders.filter(img => img == -1);
+    element.classList.toggle('removed');
+    console.log('deselected');
     sliders = sliders.filter(img => img == -1);
-    console.log('sliders');
+    // sliders.pop(img);
+    // console.log('removed');
+    // console.log('sliders');
   }
   else {
     alert('Hey, Already added !')
@@ -61,7 +69,10 @@ const createSlider = () => {
     alert('Select at least 2 image.')
     return;
   }
+
+
   // crate slider previous next area
+
   sliderContainer.innerHTML = '';
   const prevNext = document.createElement('div');
   prevNext.className = "prev-next d-flex w-100 justify-content-between align-items-center";
@@ -143,7 +154,7 @@ sliderBtn.addEventListener('click', function () {
 //   }
 // }
 
-
+// Enter button that triggers search button
 
 const getInputsearch = document.getElementById('search');
 getInputsearch.addEventListener('keyup', function (event) {
@@ -159,6 +170,8 @@ getInputsearch.addEventListener('keyup', function (event) {
   }
 
 })
+
+// enter button that trigger create slider button
 
 const getSlideSearch = document.getElementById('duration');
 getSlideSearch.addEventListener('keyup', function () {
@@ -176,3 +189,6 @@ getSlideSearch.addEventListener('keyup', function () {
 })
 // onmouseover
 // onmouseover =selectItem(event, "${image.imageHeight} ${image.imageWidth} ")
+
+
+
